@@ -1,9 +1,10 @@
 
 class Solution {
 public:
+    //using greedy approach
     //at each step from the 1st index it calculates 
     //the max betwen  it can go and the step from the previous step
-    //then strart jumping from te oth index 
+    //then start jumping from the 0th index 
     //and setting updating index to it's value after each itr 
     int jump(vector<int>& nums) {
 
