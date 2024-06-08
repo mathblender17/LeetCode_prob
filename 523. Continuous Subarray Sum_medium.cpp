@@ -12,7 +12,7 @@ So for to get O(n) - we use hash map to keep the remainderrs
     bool checkSubarraySum(vector<int>& nums, int k) {
         int n=nums.size();
         unordered_map<int,int> remInd;
-        rem[-1]=0;
+        rem[0]=-1;
         int cumSum=0;
 
         for(int i=0;i<n;i++){
