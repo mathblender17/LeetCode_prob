@@ -5,6 +5,7 @@ public:
     simple change in the we keep the count - core idea to solve still the same
     still the integer n is being called for every recursion calls no major use of it - than for comparision
     helped in code imnprovement - neetcode
+    time complexity O(2^N)
     **/
 
     void solve(int n, string temp, int ip, int lp, vector<string>& ans) {
