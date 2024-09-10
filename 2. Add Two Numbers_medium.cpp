@@ -1,3 +1,5 @@
+
+
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -8,6 +10,55 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+class Solution {
+public:
+/** CORE IDEA :  traversing through the lists + creating new nodes to add and hold the sum + to deal with the carry(while traversing as well as after completing the traversal)
+
+1> here we use && for when both compulsory have elements, and separate while loops for the left remaining list - this is most probably redundant (O(3n))
+I keep forgetting the part that in the  new nodes are to be made/created here for the res linked list
+
+2> if we use OR(||) i think it would decrease the number of while loops to 1 ~prolly O(n)
+**/
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        int c=0;
+        ListNode* res =new ListNode(-1);
+        ListNode* d =res;
+
+        while(l1 != nullptr || l2 != nullptr){
+            int a = (l1 ?l1->val : 0);
+            int b = (l2 ?l2->val : 0);
+            int sum = a+b + c;
+
+            c=sum/10;
+            sum=sum%10;
+
+            d->next =new ListNode(sum);
+            d=d->next;
+
+            if(l1) l1=l1->next;
+            if(l2) l2=l2->next;            
+        }
+       
+        if (c > 0) {
+            d->next = new ListNode(c);
+        }
+        
+        return res->next;
+    }
+};
+
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+/**
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
@@ -37,3 +88,4 @@ public:
         
     }
 };
+**/
