@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-        //thius is the turtle and hare problm
+        //this is the turtle and hare problem
         //if(head==NULL)return false;
         ListNode* fast=head;
         ListNode* slow=head;
@@ -10,7 +10,7 @@ public:
             fast=fast->next->next;
             slow=slow->next;
 
-            if(fast==slow)return true;
+            if(fast==slow)return true;//checking in each iteration only as we only need find the occurrence 
         }return false;
     }
 };
